@@ -8,8 +8,8 @@
     <ProjectGuid>{4CDC26AE-2228-47B2-88E0-D122CCD7316D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfApplicationClient</RootNamespace>
-    <AssemblyName>WpfApplicationClient</AssemblyName>
+    <RootNamespace>Jiuyong</RootNamespace>
+    <AssemblyName>wpfc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

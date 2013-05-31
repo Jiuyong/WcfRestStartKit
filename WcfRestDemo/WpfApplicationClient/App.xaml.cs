@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace WpfApplicationClient
+namespace Jiuyong
 {
 	/// <summary>
 	/// App.xaml 的交互逻辑

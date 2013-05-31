@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{80781094-7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplicationClient", "WpfApplicationClient\WpfApplicationClient.csproj", "{4CDC26AE-2228-47B2-88E0-D122CCD7316D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfRestWebHost", "WcfRestWebHost\WcfRestWebHost.csproj", "{8227932F-71BF-47A1-B514-9308F8EFB669}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,16 @@ Global
 		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|Mixed Platforms.Build.0 = Release|x86
 		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|x86.ActiveCfg = Release|x86
 		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|x86.Build.0 = Release|x86
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8227932F-71BF-47A1-B514-9308F8EFB669}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +58,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC} = {6EDD9A10-5ED4-4188-9DD8-FB2A03E851D3}
 		{4CDC26AE-2228-47B2-88E0-D122CCD7316D} = {6EDD9A10-5ED4-4188-9DD8-FB2A03E851D3}
+		{8227932F-71BF-47A1-B514-9308F8EFB669} = {80781094-7F13-4F3C-AA9D-FA2E5BAE87EF}
 	EndGlobalSection
 EndGlobal
