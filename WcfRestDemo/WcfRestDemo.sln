@@ -7,21 +7,44 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wpf", "Wpf", "{6EDD9A10-5ED
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{80781094-7F13-4F3C-AA9D-FA2E5BAE87EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplicationClient", "WpfApplicationClient\WpfApplicationClient.csproj", "{4CDC26AE-2228-47B2-88E0-D122CCD7316D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Debug|x86.ActiveCfg = Debug|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Debug|x86.Build.0 = Debug|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|Any CPU.ActiveCfg = Release|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|x86.ActiveCfg = Release|x86
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9F0A7307-CA10-4D2E-9338-9B72F880A1DC} = {6EDD9A10-5ED4-4188-9DD8-FB2A03E851D3}
+		{4CDC26AE-2228-47B2-88E0-D122CCD7316D} = {6EDD9A10-5ED4-4188-9DD8-FB2A03E851D3}
 	EndGlobalSection
 EndGlobal
