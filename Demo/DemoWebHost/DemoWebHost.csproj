@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SilverlightApplicationList>{8E707ECA-C5E7-44F1-AFD4-7EA294AB0A7E}|..\DemoSlClient\DemoSlClient.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,7 +61,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientBin\client.xap" />
+    <Content Include="DemoSlClientTestPage.aspx" />
+    <Content Include="DemoSlClientTestPage.html" />
     <Content Include="Global.asax" />
+    <Content Include="Silverlight.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -105,7 +110,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>39587</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:39011/</IISUrl>
+          <IISUrl>http://localhost:39012/Demo</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
