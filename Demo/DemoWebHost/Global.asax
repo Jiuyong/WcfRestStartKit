@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Jiuyong.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Demo.Global" Language="C#" %>
