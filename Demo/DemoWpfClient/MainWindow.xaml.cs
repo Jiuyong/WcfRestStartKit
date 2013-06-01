@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Jiuyong;
 
 namespace Demo
 {
@@ -22,6 +23,15 @@ namespace Demo
 		public MainWindow()
 		{
 			InitializeComponent();
+			Loaded += Window_Loaded;
+		}
+
+		void Window_Loaded(object sender, RoutedEventArgs e)
+		{
+			this.SendCommand<Guid>(Jiuyong.Commands.Login, null, r =>
+			{
+				MessageBox.Show(r.Result.ToString());
+			});
 		}
 	}
 }

@@ -22,7 +22,7 @@ namespace Demo
 		[WebGet(UriTemplate=Commands.Login)]
 		public string GetUserToken()
 		{
-			return RestClientDefault.ClientToken;
+			return Guid.NewGuid().ToString();
 		}
 
 		#endregion
