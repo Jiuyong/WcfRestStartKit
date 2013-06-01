@@ -28,7 +28,7 @@ namespace Demo
 
 		void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			this.SendCommand<Guid>(Jiuyong.Commands.Login, null, r =>
+			this.SendCommand<int?>(Jiuyong.Commands.TestDataBase, null, r =>
 			{
 				MessageBox.Show(r.Result.ToString());
 			});

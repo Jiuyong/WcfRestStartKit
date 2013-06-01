@@ -29,15 +29,18 @@ namespace Demo
 
 		#region IDebugService 成员
 
-		DateTime IDebugService.DoWork()
+		public DateTime DoWork()
 		{
 			throw new NotImplementedException();
 		}
 
+		[WebGet(UriTemplate = Commands.TestDataBase)]
 		public int? GetVersion()
 		{
-			throw new NotImplementedException();
+			var db = new Entity.DatabaseContext();
+			return db.Blogs.Count();
 		}
+
 
 		public DateTime GetTest()
 		{
