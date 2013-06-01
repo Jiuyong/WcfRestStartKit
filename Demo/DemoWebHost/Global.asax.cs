@@ -7,7 +7,7 @@ using System.Web.SessionState;
 using System.Web.Routing;
 using System.ServiceModel.Activation;
 
-namespace Jiuyong
+namespace Demo
 {
 	public class Global : System.Web.HttpApplication
 	{

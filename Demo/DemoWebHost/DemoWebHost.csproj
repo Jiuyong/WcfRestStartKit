@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jiuyong</RootNamespace>
-    <AssemblyName>host</AssemblyName>
+    <RootNamespace>Demo</RootNamespace>
+    <AssemblyName>web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -85,9 +85,9 @@
       <Project>{27E992BD-89F5-47D3-9A34-8D6B8EDA7334}</Project>
       <Name>JiuyongCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WcfRestService\WcfRestService.csproj">
+    <ProjectReference Include="..\DemoService\DemoService.csproj">
       <Project>{E5EBA73A-BD6A-473E-9804-30543F46C6CE}</Project>
-      <Name>WcfRestService</Name>
+      <Name>DemoService</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
