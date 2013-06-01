@@ -31,7 +31,10 @@ namespace Demo
 			this.SendCommand<int?>(Jiuyong.Commands.TestDataBase, null, r =>
 			{
 				MessageBox.Show(r.Result.ToString());
-			});
+			}
+			,
+			new DataContractXmlSerializer()
+			);
 		}
 	}
 }

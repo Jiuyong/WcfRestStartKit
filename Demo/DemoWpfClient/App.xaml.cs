@@ -15,7 +15,7 @@ namespace Demo
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			base.OnStartup(e);
-			RestClientDefault.BaseUri = new Uri(@"http://localhost:39011/Service/");
+			RestClientDefault.BaseUri = new Uri(@"http://localhost:39012/Demo/Service/");
 		}
 	}
 }
