@@ -8,8 +8,8 @@
     <ProjectGuid>{4CDC26AE-2228-47B2-88E0-D122CCD7316D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jiuyong</RootNamespace>
-    <AssemblyName>wpfc</AssemblyName>
+    <RootNamespace>Demo</RootNamespace>
+    <AssemblyName>client</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
