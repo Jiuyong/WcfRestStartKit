@@ -26,7 +26,10 @@ namespace Demo
 			this.SendCommand<int?>(Commands.TestDataBase, null, r =>
 			{
 				MessageBox.Show(r.Result.ToString());
-			});
+			}
+			,
+			new DataContractXmlSerializer()
+			);
 			//MessageBox.Show("你好，世界！");
 		}
 	}
