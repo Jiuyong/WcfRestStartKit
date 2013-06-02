@@ -54,6 +54,9 @@
     <Compile Include="..\..\Core\Wcf\IRestService.cs">
       <Link>Core\IRestService.cs</Link>
     </Compile>
+    <Compile Include="..\DemoPortable\Models\Models.cs">
+      <Link>Models\Models.cs</Link>
+    </Compile>
     <Compile Include="Entity\DemoDatabase.cs" />
     <Compile Include="DemoService.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -68,6 +71,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

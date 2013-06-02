@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiuyongSilverlight", "..\Core\JiuyongSilverlight.csproj", "{5FE245A4-7A28-445F-B158-1A8E998F13F2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{55DF7514-9F43-4D94-9ED1-B4DAC4923772}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiuyongCore", "..\Core\JiuyongCore.csproj", "{27E992BD-89F5-47D3-9A34-8D6B8EDA7334}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoService", "DemoService\DemoService.csproj", "{E5EBA73A-BD6A-473E-9804-30543F46C6CE}"

@@ -28,13 +28,22 @@ namespace Demo
 
 		void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			this.SendCommand<int?>(Jiuyong.Commands.TestDataBase, null, r =>
+			var d = new Models.Post
+			{
+				BlogId = 1,
+				Content = "一大段文本内容。",
+				CreateTime = DateTime.Now,
+				Title = "WPF 评论"
+			};
+
+			this.SendCommand<int?>(Commands.Test, d, r =>
 			{
 				MessageBox.Show(r.Result.ToString());
 			}
 			,
 			new DataContractXmlSerializer()
 			);
+
 		}
 	}
 }

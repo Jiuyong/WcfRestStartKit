@@ -34,13 +34,10 @@ namespace Demo
 			throw new NotImplementedException();
 		}
 
-		[WebGet(UriTemplate = Commands.TestDataBase)]
 		public int? GetVersion()
 		{
-			var db = new Entity.DatabaseContext();
-			return db.Blogs.Count();
+			throw new NotImplementedException();
 		}
-
 
 		public DateTime GetTest()
 		{
@@ -58,5 +55,22 @@ namespace Demo
 		}
 
 		#endregion
+
+		[WebInvoke(UriTemplate = Commands.Test)]
+		public int PostTest(Models.Post post)
+		{
+			var db = new Entity.DatabaseContext();
+			var p = new Entity.Post
+			{
+				BlogId=post.BlogId
+				,
+				Content=post.Content
+				,
+				Title=post.Title
+			};
+			db.Posts.Add(p);
+			db.SaveChanges();
+			return db.Posts.Count();
+		}
 	}
 }

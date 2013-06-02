@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Demo
 {
@@ -14,6 +15,7 @@ namespace Demo
 	{
 		public class Blog
 		{
+			[Key]
 			public int BlogId
 			{
 				get;
@@ -34,6 +36,7 @@ namespace Demo
 
 		public class Post
 		{
+			[Key]
 			public int PostId
 			{
 				get;
@@ -78,6 +81,8 @@ namespace Demo
 				//TODO:初始化数据库数据。
 				dbc.Blogs.Add(new Blog
 				{
+					BlogId = 0
+					,
 					Name= "真没有了。。。"
 				});
 
