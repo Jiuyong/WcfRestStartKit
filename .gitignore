@@ -110,3 +110,4 @@ Demo/DemoService/IDemoService.cs
 Demo/DemoService/IService.cs
 Demo/DemoService/IService1.cs
 Demo/DemoService/Service1.cs
+Demo/DemoPortable/Class1.cs

@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWpfClient", "DemoWpfCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoSlClient", "DemoSlClient\DemoSlClient.csproj", "{8E707ECA-C5E7-44F1-AFD4-7EA294AB0A7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPortable", "DemoPortable\DemoPortable.csproj", "{A0495FBB-51D0-40DD-9C2F-2E961C14158A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,16 @@ Global
 		{8E707ECA-C5E7-44F1-AFD4-7EA294AB0A7E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8E707ECA-C5E7-44F1-AFD4-7EA294AB0A7E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8E707ECA-C5E7-44F1-AFD4-7EA294AB0A7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A0495FBB-51D0-40DD-9C2F-2E961C14158A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
