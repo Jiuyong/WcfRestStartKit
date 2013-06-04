@@ -7,6 +7,7 @@ using System.Text;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using Jiuyong;
+using Demo.Models;
 
 namespace Demo
 {
@@ -16,6 +17,16 @@ namespace Demo
 	[ServiceContract]
 	public class DemoService: IDebugService,ICoreService
 	{
+		[WebGet(UriTemplate=Commands.Test)]
+		public Category GetCategory()
+		{
+			return new Category()
+			{
+				categoryId = "001"
+				,
+				categoryName= ".net"
+			};
+		}
 
 		#region ICoreService 成员
 

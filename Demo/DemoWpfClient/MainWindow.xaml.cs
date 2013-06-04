@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Jiuyong;
+using Demo.Models;
 
 namespace Demo
 {
@@ -36,14 +37,40 @@ namespace Demo
 				Title = "WPF 评论"
 			};
 
-			this.SendCommand<int?>(Commands.Test, d, r =>
+			//this.SendCommand<Root<Category>>(new Uri("http://202.119.11.100:8080/BookRestService/rest/categoryservice/category/001"),null,r =>
+
+			////this.SendCommand<Demo.Models.Category>(Commands.Test,null,r =>
+			//{
+			//    MessageBox.Show(r.Result.ToString());
+			//}
+			////,
+			////new DotNetXmlSerializer()
+			//);
+
+			var rq = new Root<Category>()
+			{
+				Category = new Category
+				{
+					categoryId = "002"
+					,
+					categoryName = "xin"
+				}
+			};
+
+			this.SendCommand<string>(new Uri("http://202.119.11.100:8080/BookRestService/rest/categoryservice/category"),rq,r =>
+
+			//this.SendCommand<Demo.Models.Category>(Commands.Test,null,r =>
 			{
 				MessageBox.Show(r.Result.ToString());
 			}
-			,
-			new DataContractXmlSerializer()
+			//,
+			//new DotNetXmlSerializer()
 			);
-
 		}
+	}
+
+	public class Root<T>
+	{
+		public T Category;
 	}
 }

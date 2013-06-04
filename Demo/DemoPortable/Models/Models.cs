@@ -13,4 +13,10 @@ namespace Demo.Models
 		public DateTime CreateTime;
 		public int BlogId;
 	}
+
+	public class Category
+	{
+		public string categoryId;
+		public string categoryName;
+	}
 }
