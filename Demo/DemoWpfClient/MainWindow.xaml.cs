@@ -51,13 +51,13 @@ namespace Demo
 			{
 				Category = new Category
 				{
-					categoryId = "002"
+					categoryId = Core.GetNextSerialInt32().ToString("000")
 					,
-					categoryName = "xin"
+					categoryName = "xin2"
 				}
 			};
 
-			this.SendCommand<string>(new Uri("http://202.119.11.100:8080/BookRestService/rest/categoryservice/category"),rq,r =>
+			this.SendCommand<string>(Demo.Commands.Category,rq,r =>
 
 			//this.SendCommand<Demo.Models.Category>(Commands.Test,null,r =>
 			{

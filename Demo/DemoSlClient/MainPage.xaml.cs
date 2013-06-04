@@ -25,7 +25,7 @@ namespace Demo
 		{
 			var d = new Models.Post{BlogId=1,Content="一大段文本内容。",CreateTime=DateTime.Now,Title="Silverlight 评论"};
 
-			this.SendCommand<int?>(Commands.Test,d , r =>
+			this.SendCommand<int?>(Jiuyong.Commands.Test,d , r =>
 			{
 				MessageBox.Show(r.Result.ToString());
 			}

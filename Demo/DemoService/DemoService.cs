@@ -17,7 +17,7 @@ namespace Demo
 	[ServiceContract]
 	public class DemoService: IDebugService,ICoreService
 	{
-		[WebGet(UriTemplate=Commands.Test)]
+		[WebGet(UriTemplate=Jiuyong.Commands.Test)]
 		public Category GetCategory()
 		{
 			return new Category()
@@ -30,7 +30,7 @@ namespace Demo
 
 		#region ICoreService 成员
 
-		[WebGet(UriTemplate=Commands.Login)]
+		[WebGet(UriTemplate=Jiuyong.Commands.Login)]
 		public string GetUserToken()
 		{
 			return Guid.NewGuid().ToString();
@@ -67,7 +67,7 @@ namespace Demo
 
 		#endregion
 
-		[WebInvoke(UriTemplate = Commands.Test,Method=HttpMethod.Put)]
+		[WebInvoke(UriTemplate = Jiuyong.Commands.Test,Method=HttpMethod.Put)]
 		public int PostTest(Models.Post post)
 		{
 			var db = new Entity.DatabaseContext();
