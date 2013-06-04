@@ -63,8 +63,10 @@ namespace Demo
 			{
 				MessageBox.Show(r.Result.ToString());
 			}
-			//,
-			//new DotNetXmlSerializer()
+			,
+			new DataContractXmlSerializer()
+			,
+			httpMethod : HttpMethod.Put
 			);
 		}
 	}

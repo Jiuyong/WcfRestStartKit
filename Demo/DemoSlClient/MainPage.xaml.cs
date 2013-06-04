@@ -31,6 +31,8 @@ namespace Demo
 			}
 			,
 			new DataContractXmlSerializer()
+			,
+			httpMethod: HttpMethod.Put
 			);
 		}
 	}
