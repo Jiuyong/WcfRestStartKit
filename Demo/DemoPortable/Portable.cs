@@ -9,4 +9,9 @@ namespace Demo
 	{
 		public const string Category = "category";
 	}
+	
+	public class Root<T>
+	{
+		public T Category;
+	}
 }

@@ -37,15 +37,13 @@ namespace Demo
 				Title = "WPF 评论"
 			};
 
-			//this.SendCommand<Root<Category>>(new Uri("http://202.119.11.100:8080/BookRestService/rest/categoryservice/category/001"),null,r =>
-
-			////this.SendCommand<Demo.Models.Category>(Commands.Test,null,r =>
-			//{
-			//    MessageBox.Show(r.Result.ToString());
-			//}
-			////,
-			////new DotNetXmlSerializer()
-			//);
+			this.SendCommand<Demo.Models.Category>(Commands.Category + "/001", null, r =>
+			{
+				MessageBox.Show(r.Result.ToString());
+			}
+			,
+			httpMethod: HttpMethod.Get
+			);
 
 			var rq = new Root<Category>()
 			{
@@ -57,22 +55,13 @@ namespace Demo
 				}
 			};
 
-			this.SendCommand<string>(Demo.Commands.Category,rq,r =>
-
-			//this.SendCommand<Demo.Models.Category>(Commands.Test,null,r =>
+			this.SendCommand<bool>(Demo.Commands.Category, rq, r =>
 			{
 				MessageBox.Show(r.Result.ToString());
 			}
 			,
-			new DataContractXmlSerializer()
-			,
-			httpMethod : HttpMethod.Put
+			httpMethod: HttpMethod.Put
 			);
 		}
-	}
-
-	public class Root<T>
-	{
-		public T Category;
 	}
 }

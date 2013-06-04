@@ -17,16 +17,23 @@ namespace Demo
 	[ServiceContract]
 	public class DemoService: IDebugService,ICoreService
 	{
-		[WebGet(UriTemplate=Jiuyong.Commands.Test)]
-		public Category GetCategory()
+		[WebInvoke(UriTemplate=Commands.Category+@"/{id}",Method=HttpMethod.Get)]
+		public Category GetCategory(string id)
 		{
 			return new Category()
 			{
-				categoryId = "001"
+				categoryId = id
 				,
 				categoryName= ".net"
 			};
 		}
+
+		[WebInvoke(UriTemplate = Commands.Category, Method = HttpMethod.Put)]
+		public bool PutGetCategory(Root<Category> root)
+		{
+			return null != root;
+		}
+
 
 		#region ICoreService 成员
 
