@@ -56,7 +56,7 @@ namespace Demo
 
 		#endregion
 
-		[WebInvoke(UriTemplate = Commands.Test)]
+		[WebInvoke(UriTemplate = Commands.Test,Method=HttpMethod.Put)]
 		public int PostTest(Models.Post post)
 		{
 			var db = new Entity.DatabaseContext();
