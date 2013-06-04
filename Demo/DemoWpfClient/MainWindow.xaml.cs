@@ -24,34 +24,46 @@ namespace Demo
 		public MainWindow()
 		{
 			InitializeComponent();
-			Loaded += Window_Loaded;
+			//Loaded += Window_Loaded;
 		}
 
 		void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			var d = new Models.Post
-			{
-				BlogId = 1,
-				Content = "一大段文本内容。",
-				CreateTime = DateTime.Now,
-				Title = "WPF 评论"
-			};
+			//var d = new Models.Post
+			//{
+			//    BlogId = 1,
+			//    Content = "一大段文本内容。",
+			//    CreateTime = DateTime.Now,
+			//    Title = "WPF 评论"
+			//};
 
-			this.SendCommand<Demo.Models.Category>(Commands.Category + "/001", null, r =>
+
+		}
+
+		private void ButtonGetData_Click(object sender, RoutedEventArgs e)
+		{
+
+			ButtonGetData.SendCommand<Demo.Models.Category>(Commands.Category + String.Format("/{0:000}",BoxID.Text), null, r =>
 			{
-				MessageBox.Show(r.Result.ToString());
+				BoxID.Text = r.Result.categoryId;
+				BoxName.Text = r.Result.categoryName;
 			}
 			,
 			httpMethod: HttpMethod.Get
 			);
 
+		}
+
+		private void ButtonPutData_Click(object sender, RoutedEventArgs e)
+		{
+
 			var rq = new Root<Category>()
 			{
 				Category = new Category
 				{
-					categoryId = Core.GetNextSerialInt32().ToString("000")
+					categoryId = BoxID.Text
 					,
-					categoryName = "xin2"
+					categoryName = BoxName.Text
 				}
 			};
 
@@ -62,6 +74,17 @@ namespace Demo
 			,
 			httpMethod: HttpMethod.Put
 			);
+
+		}
+
+		private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+		{
+			Application.Current.Shutdown();
+		}
+
+		private void ButtonOK_Click(object sender, RoutedEventArgs e)
+		{
+
 		}
 	}
 }
