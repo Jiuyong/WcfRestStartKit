@@ -42,16 +42,22 @@ namespace Demo
 
 		private void ButtonGetData_Click(object sender, RoutedEventArgs e)
 		{
-
-			ButtonGetData.SendCommand<Demo.Models.Category>(Commands.Category + String.Format("/{0:000}",BoxID.Text), null, r =>
+			try
 			{
-				BoxID.Text = r.Result.categoryId;
-				BoxName.Text = r.Result.categoryName;
-			}
-			,
-			httpMethod: HttpMethod.Get
-			);
+				ButtonGetData.SendCommand<Root<Demo.Models.Category>>(Commands.Category + String.Format("/{0:000}",BoxID.Text),null,r =>
+				{
+					BoxID.Text = r.Result.Category.categoryId;
+					BoxName.Text = r.Result.Category.categoryName;
+				}
+					//,
+					//httpMethod: HttpMethod.Get
+				);
 
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.StackTrace);
+			}
 		}
 
 		private void ButtonPutData_Click(object sender, RoutedEventArgs e)
@@ -67,12 +73,12 @@ namespace Demo
 				}
 			};
 
-			this.SendCommand<bool>(Demo.Commands.Category, rq, r =>
+			this.SendCommand<Root<Category>>(Demo.Commands.Category,rq,r =>
 			{
 				MessageBox.Show(r.Result.ToString());
 			}
-			,
-			httpMethod: HttpMethod.Put
+			//,
+			//httpMethod: HttpMethod.Put
 			);
 
 		}
