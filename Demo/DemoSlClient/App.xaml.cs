@@ -29,7 +29,12 @@ namespace Demo
 		{
 			//RestClientDefault.ClientToken = null;
 #if DEBUG
-			RestClientDefault.BaseUri = new Uri(App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/Service/"));
+			RestClientDefault.BaseUri = new Uri(
+				App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/Service/")
+				//@"http://202.119.11.100:8080/BookRestService/rest/categoryservice/"
+				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/rest/categoryservice/")
+				);
+			MessageBox.Show(RestClientDefault.BaseUri.ToString());
 #else
 			RestClientDefault.BaseUri = new Uri("http://localhost:39012/Demo/Service/");
 #endif

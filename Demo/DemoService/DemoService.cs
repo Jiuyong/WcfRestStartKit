@@ -18,17 +18,20 @@ namespace Demo
 	public class DemoService: IDebugService,ICoreService
 	{
 		[WebInvoke(UriTemplate=Commands.Category+@"/{id}",Method=HttpMethod.Get)]
-		public Category GetCategory(string id)
+		public Root<Category> GetCategory(string id)
 		{
-			return new Category()
+			return new Root<Category>()
 			{
-				categoryId = id
-				,
-				categoryName= ".net"
+				Category = new Category()
+				{
+					categoryId = id
+					,
+					categoryName = ".net"
+				}
 			};
 		}
 
-		[WebInvoke(UriTemplate = Commands.Category, Method = HttpMethod.Put)]
+		[WebInvoke(UriTemplate = Commands.Category, Method = HttpMethod.Post)]
 		public bool PutGetCategory(Root<Category> root)
 		{
 			return null != root;

@@ -66,7 +66,9 @@
     <Content Include="DemoSlClientTestPage.html" />
     <Content Include="Global.asax" />
     <Content Include="Silverlight.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
