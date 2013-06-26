@@ -1,0 +1,42 @@
+﻿<sdk:Page	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+	mc:Ignorable="d"
+	x:Class="Demo.SplitePage" 
+	Title="SplitePage Page"
+	d:DesignWidth="640" d:DesignHeight="480">
+	
+	<Grid x:Name="LayoutRoot" >
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="SpliteStates">
+				<VisualState x:Name="Splited"/>
+				<VisualState x:Name="All"/>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Grid.RowDefinitions>
+			<RowDefinition x:Name="TopRowDefinition" MinHeight="0"/>
+			<RowDefinition Height="10"/>
+			<RowDefinition x:Name="BottomRowDefinition" MinHeight="0"/>
+		</Grid.RowDefinitions>
+		<Rectangle Fill="#FF8484DC" Stroke="Black" Grid.RowSpan="2"/>
+		<sdk:GridSplitter HorizontalAlignment="Stretch" Grid.Row="1"/>
+		<Rectangle Fill="#FFA2459E" Stroke="Black" Grid.Row="2"/>
+		<ToggleButton x:Name="SplitedSelecter" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Width="100" Grid.Row="1" IsThreeState="True" Click="SplitedSelecter_Click">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<i:Interaction.Behaviors>
+						<ei:ConditionBehavior>
+							<ei:ConditionalExpression>
+								<ei:ComparisonCondition/>
+							</ei:ConditionalExpression>
+						</ei:ConditionBehavior>
+					</i:Interaction.Behaviors>
+					<ei:GoToStateAction/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+			<Path Data="M0,0 L5,4 L10,0 z" UseLayoutRounding="False" Width="10" Fill="Black"/>
+		</ToggleButton>
+	</Grid>
+</sdk:Page>
