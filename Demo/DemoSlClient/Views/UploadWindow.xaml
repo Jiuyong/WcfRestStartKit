@@ -1,0 +1,208 @@
+﻿<sdk:Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+	xmlns:local="clr-namespace:Jiuyong"
+	xmlns:core="clr-namespace:Jiuyong;assembly=sl"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	x:Class="Jiuyong.UploadWindow"
+	Title="上传文件" mc:Ignorable="d" d:DesignWidth="384" d:DesignHeight="344">
+	<sdk:Page.Resources>
+		<local:UploadWindowModel x:Key="UploadWindowModelDataSource" d:IsDataSource="True"/>
+	</sdk:Page.Resources>
+	<sdk:Page.DataContext>
+		<local:UploadWindowModel/>
+	</sdk:Page.DataContext>
+	<Grid>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="UploadVisualStateGroup">
+				<VisualState x:Name="UploadComplete">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="BeginButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="CancelButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<System:Boolean>False</System:Boolean>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CompleteButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="CompleteButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<System:Boolean>True</System:Boolean>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ExtendedProgressBar.LeftText)" Storyboard.TargetName="ExtendedBar">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="上传完成。"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="SelectFilesButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="UploadReady">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="BeginButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="BeginButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<System:Boolean>True</System:Boolean>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="CancelButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<System:Boolean>True</System:Boolean>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="CompleteButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<System:Boolean>False</System:Boolean>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ExtendedProgressBar.LeftText)" Storyboard.TargetName="ExtendedBar">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="准备上传。"/>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CompleteButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CancelButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ExtendedBar">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="SelectFilesButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="Uploading">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="SelectFilesButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="BeginButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CancelButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CompleteButton">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ExtendedProgressBar.LeftText)" Storyboard.TargetName="ExtendedBar">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="正在上传。。。"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="UploadWaitSelect"/>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto" MinHeight="22"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<VisualStateManager.CustomVisualStateManager>
+			<ei:ExtendedVisualStateManager/>
+		</VisualStateManager.CustomVisualStateManager>
+		<Button Content="上传完成" d:LayoutOverrides="Height" Grid.Row="1" x:Name="CompleteButton"  Click="CompleteButton_Click" Grid.Column="1" IsEnabled="False" Visibility="Collapsed">
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<ei:GoToStateAction StateName="UploadWaitSelect"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button Content="取消上传" d:LayoutOverrides="Width, Height" x:Name="CancelButton" Grid.Row="1" Click="CancelButton_Click" Grid.Column="1" Visibility="Collapsed" >
+			<i:Interaction.Triggers>
+				<i:EventTrigger EventName="Click">
+					<ei:GoToStateAction StateName="UploadReady"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</Button>
+		<Button Content="开始上传" d:LayoutOverrides="Height" x:Name="BeginButton" Grid.Column="1" Grid.Row="1" Click="BeginButton_Click" IsEnabled="False" Visibility="Collapsed"/>
+		<ListBox x:Name="UploadFilesPanel" Margin="0,0,0,8" Grid.ColumnSpan="2" ItemsSource="{Binding Body}" SelectionMode="Extended" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<ListBox.ItemContainerStyle>
+				<Style TargetType="ListBoxItem">
+					<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+				</Style>
+			</ListBox.ItemContainerStyle>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<!--ProgressBar CacheMode="BitmapCache" Maximum="{Binding Main.Length, Mode=OneWay}" Value="{Binding CurrentCount}" Height="20" d:DesignWidth="299"/-->
+					<core:ExtendedProgressBar d:DesignWidth="443" LeftText="{Binding Body.Name, Mode=OneWay}" RightText="{Binding Total, StringFormat=大小：\{0:N0\} 字节}" CenterText="{Binding Percent, StringFormat=已上传：\{0:P1\}}" IsCancelled="{Binding Cancelled}" Value="{Binding CurrentValue}" IsCompleted="{Binding Completed}" Maximum="{Binding Body.Length, Mode=OneWay}"/>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<core:ExtendedProgressBar x:Name="ExtendedBar" Grid.Row="1" Margin="8,0" RightText="{Binding Body.Length, StringFormat=总数目：\{0:N0\} 个}" CenterText="{Binding CurrentValue, StringFormat=已上传：\{0:N0\} 个}" LeftText="请选择文件。" Value="{Binding CurrentValue}" Maximum="{Binding Body.Length}" IsCancelled="{Binding Cancelled}" IsCompleted="{Binding Completed}"/>
+		<Button x:Name="SelectFilesButton" Content="选择文件" Grid.Column="1" VerticalAlignment="Top" Grid.Row="1" Click="SelectFilesButton_Click" d:LayoutOverrides="GridBox"/>
+	</Grid>
+</sdk:Page>

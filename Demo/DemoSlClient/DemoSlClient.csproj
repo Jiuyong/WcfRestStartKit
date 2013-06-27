@@ -88,22 +88,26 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Core\FileUploadCore.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SplitePage.xaml.cs">
+    <Compile Include="Views\SplitePage.xaml.cs">
       <DependentUpon>SplitePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ServerPagedCollectionViewPage.xaml.cs">
       <DependentUpon>ServerPagedCollectionViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RestPage.xaml.cs">
+    <Compile Include="Views\RestPage.xaml.cs">
       <DependentUpon>RestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StudentsPage.xaml.cs">
       <DependentUpon>StudentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UploadWindow.xaml.cs">
+      <DependentUpon>UploadWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -115,7 +119,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SplitePage.xaml">
+    <Page Include="Views\SplitePage.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -123,13 +127,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="RestPage.xaml">
+    <Page Include="Views\RestPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\StudentsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UploadWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

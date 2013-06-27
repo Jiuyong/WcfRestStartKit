@@ -108,19 +108,5 @@ namespace Demo
 			System.Threading.Thread.Sleep(3 * 1000);
 			return students;
 		}
-
-		[WebInvoke(Method = "POST",UriTemplate = "StudentService/EvaluateStudents?s={start}&c={count}")]
-		public List<Student> EvaluateStudents(int start,int count)
-		{
-			var rand = new Random();
-			foreach (var student in students)
-			{
-				student.Score = 60 + (int)(rand.NextDouble() * 40);
-				student.EvaluationTime = DateTime.Now;
-			}
-
-			System.Threading.Thread.Sleep(3 * 1000);
-			return students;
-		}
 	}
 }
