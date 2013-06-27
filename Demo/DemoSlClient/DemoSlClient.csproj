@@ -102,6 +102,9 @@
     <Compile Include="RestPage.xaml.cs">
       <DependentUpon>RestPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StudentsPage.xaml.cs">
+      <DependentUpon>StudentsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -123,6 +126,10 @@
     <Page Include="RestPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StudentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

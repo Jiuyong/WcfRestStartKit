@@ -19,4 +19,12 @@ namespace Demo.Models
 		public string categoryId;
 		public string categoryName;
 	}
+
+	public class Student
+	{
+		public int ID;
+		public string Name;
+		public int Score;
+		public DateTime EvaluationTime;
+	}
 }

@@ -33,6 +33,7 @@ namespace Demo
 				App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/Service/")
 				//@"http://202.119.11.100:8080/BookRestService/rest/categoryservice/"
 				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/rest/categoryservice/")
+				//@"http://202.119.11.100:62152/StudentService/"
 				);
 			MessageBox.Show(RestClientDefault.BaseUri.ToString());
 #else
@@ -45,7 +46,7 @@ namespace Demo
 			Register<Views.ServerPagedCollectionViewPage>("服务器端分页功能验证");
 			Register<RestPage>("Rest调用验证");
 			Register<SplitePage>("分栏");
-			//Register<Views.?>("Rest获取数据");
+			Register<Views.StudentsPage>("Rest获取数据");
 			#endregion
 
 			this.RootVisual = new MainPage();
