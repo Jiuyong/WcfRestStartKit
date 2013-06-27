@@ -24,60 +24,9 @@ namespace Demo
 
 		//void Page_Loaded(object sender, RoutedEventArgs e)
 		//{
-		//    var d = new Models.Post{BlogId=1,Content="一大段文本内容。",CreateTime=DateTime.Now,Title="Silverlight 评论"};
 
-		//    this.SendCommand<int?>(Jiuyong.Commands.Test,d , r =>
-		//    {
-		//        MessageBox.Show(r.Result.ToString());
-		//    }
-		//    ,
-		//    httpMethod: HttpMethod.Put
-		//    );
 		//}
 
-
-		private void ButtonGetData_Click(object sender, RoutedEventArgs e)
-		{
-			try
-			{
-				ButtonGetData.SendCommand<Root<Demo.Models.Category>>(Commands.Category + String.Format("/{0:000}", BoxID.Text), null, r =>
-				{
-					BoxID.Text = r.Result.Category.categoryId;
-					BoxName.Text = r.Result.Category.categoryName;
-				}
-					//,
-					//httpMethod: HttpMethod.Get
-				);
-
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.StackTrace);
-			}
-		}
-
-		private void ButtonPutData_Click(object sender, RoutedEventArgs e)
-		{
-
-			var rq = new Root<Category>()
-			{
-				Category = new Category
-				{
-					categoryId = BoxID.Text
-					,
-					categoryName = BoxName.Text
-				}
-			};
-
-			this.SendCommand<bool>(Demo.Commands.Category, rq, r =>
-			{
-				MessageBox.Show(r.Result.ToString());
-			}
-				//,
-				//httpMethod: HttpMethod.Put
-			);
-
-		}
 
 		private void ButtonCancel_Click(object sender, RoutedEventArgs e)
 		{
@@ -87,6 +36,14 @@ namespace Demo
 		private void ButtonOK_Click(object sender, RoutedEventArgs e)
 		{
 
+		}
+
+		private void HyperlinkButton_Click(object sender,RoutedEventArgs e)
+		{
+			App.GetPage((((HyperlinkButton)sender).Content as string),pg =>
+			{
+				pg.Show();
+			});
 		}
 	}
 }

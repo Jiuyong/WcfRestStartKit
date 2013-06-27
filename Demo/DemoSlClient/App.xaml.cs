@@ -38,9 +38,19 @@ namespace Demo
 #else
 			RestClientDefault.BaseUri = new Uri("http://localhost:39012/Demo/Service/");
 #endif
-			//this.RootVisual = new MainPage();
+
+			#region 加载将所有要用到的页面的类型
+			//JiuyongOK:在此之下添加业务页面，形如：
+			//Register<XXXPageView>("某页");
+			Register<Views.ServerPagedCollectionViewPage>("服务器端分页功能验证");
+			Register<RestPage>("Rest调用验证");
+			Register<SplitePage>("分栏");
+			//Register<Views.?>("Rest获取数据");
+			#endregion
+
+			this.RootVisual = new MainPage();
 			//this.RootVisual = new SplitePage();
-			this.RootVisual = new Views.ServerPagedCollectionViewPage();
+			//this.RootVisual = new Views.ServerPagedCollectionViewPage();
 		}
 
 		private void Application_Exit(object sender, EventArgs e)
@@ -81,5 +91,48 @@ namespace Demo
 			{
 			}
 		}
+
+		#region 类型缓存机制
+		static readonly PageTypeCache pageCache = new PageTypeCache();
+
+		/// <summary>
+		/// 将TabPage注册到程序中，以便服务器调用。
+		/// </summary>
+		/// <typeparam name="TPage">TabPage的类型</typeparam>
+		/// <param name="pageCapition">页实例的Tab主标题</param>
+		private void Register<TPage>(string pageCapition)
+						where TPage : Page,new()
+		{
+			App.pageCache.Register<TPage>(pageCapition);
+		}
+
+		/// <summary>
+		/// 经过缓冲来获得数据。
+		/// </summary>
+		/// <param name="key">数据的键或名字。</param>
+		/// <param name="callback">调用方获得数据后的回调。</param>
+		public static void GetPage(string pageCapition,Action<Page> callback)
+		{
+			App.pageCache.Get(pageCapition,pg =>
+			{
+				callback(pg.Value);
+			});
+		}
+
+		///// <summary>
+		///// 将标签页航到对应页。
+		///// </summary>
+		///// <param name="pageCapition"></param>
+		//public static void NavigatedTo(string pageCapition)
+		//{
+		//    (App.Current.RootVisual as MainPage).NavigatedTo(pageCapition);
+		//}
+
+		public static System.Collections.ObjectModel.ReadOnlyObservableCollection<PageTypeCache.Entry<Lazy<Page>>> GetRegistedPages()
+		{
+			return App.pageCache.Registeds;
+		}
+		#endregion
+
 	}
 }
