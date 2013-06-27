@@ -39,7 +39,8 @@ namespace Demo
 			RestClientDefault.BaseUri = new Uri("http://localhost:39012/Demo/Service/");
 #endif
 			//this.RootVisual = new MainPage();
-			this.RootVisual = new SplitePage();
+			//this.RootVisual = new SplitePage();
+			this.RootVisual = new Views.ServerPagedCollectionViewPage();
 		}
 
 		private void Application_Exit(object sender, EventArgs e)
