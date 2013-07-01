@@ -17,7 +17,6 @@
 			<StackPanel Grid.RowSpan="9" Grid.Column="1" Background="#FFB96666">
 				<HyperlinkButton Content="服务器端分页功能验证" Click="HyperlinkButton_Click"/>
 				<HyperlinkButton Content="Rest调用验证" Click="HyperlinkButton_Click"/>
-				<HyperlinkButton Content="分栏" Click="HyperlinkButton_Click"/>
 				<HyperlinkButton Content="Rest获取数据" Click="HyperlinkButton_Click"/>
 				<HyperlinkButton Content="上传文件" Click="HyperlinkButton_Click"/>
 			</StackPanel>

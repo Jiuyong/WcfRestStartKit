@@ -45,7 +45,6 @@ namespace Demo
 			//Register<XXXPageView>("某页");
 			Register<Views.ServerPagedCollectionViewPage>("服务器端分页功能验证");
 			Register<RestPage>("Rest调用验证");
-			Register<SplitePage>("分栏");
 			Register<Views.StudentsPage>("Rest获取数据");
 			Register<UploadWindow>("上传文件");
 			#endregion
