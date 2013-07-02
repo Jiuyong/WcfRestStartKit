@@ -8,6 +8,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using Jiuyong;
 using Demo.Models;
+using System.ComponentModel;
 
 namespace Demo
 {
@@ -15,7 +16,7 @@ namespace Demo
 	[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
 	[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
 	[ServiceContract]
-	public class DemoService: IDebugService,ICoreService
+	public class DemoService: IDebugService,ICoreService,IFileService
 	{
 		[WebInvoke(UriTemplate=Commands.Category+@"/{id}",Method=HttpMethod.Get)]
 		public Root<Category> GetCategory(string id)
@@ -108,5 +109,39 @@ namespace Demo
 			System.Threading.Thread.Sleep(3 * 1000);
 			return students;
 		}
+
+		#region IFileService 成员
+
+		[Description("分段向服务器上传文件。")]
+		[WebInvoke(UriTemplate = Jiuyong.Commands.TestSendFilePartial + "?" + RequestKeys.SendFilePartialParamsString)]
+		public long SendFile(System.IO.Stream data, long offset = 0, long length = -1, byte[] hash = null, string contentTpye = "application/octet-stream", HashType hashType = HashType.Sha256, string fileName = "", long totalLength = -1)
+		{
+			//System.Threading.Thread.Sleep(33);
+			var ms = new System.IO.MemoryStream();
+			data.CopyTo(ms);
+			return offset + ms.Length;
+		}
+
+		public System.IO.Stream DownloadFile(byte[] sha256hash)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Jiuyong.Models.FileInfoModel GetFileInfo(byte[] sha256hash)
+		{
+			throw new NotImplementedException();
+		}
+
+		public long TestSendData(System.IO.Stream data)
+		{
+			throw new NotImplementedException();
+		}
+
+		public long TestSendFilePartial(System.IO.Stream data, long offset = 0, long length = -1, byte[] hash = null, string contentTpye = "application/octet-stream", HashType hashType = HashType.Sha256, string fileName = "", long totalLength = -1)
+		{
+			throw new NotImplementedException();
+		}
+
+		#endregion
 	}
 }

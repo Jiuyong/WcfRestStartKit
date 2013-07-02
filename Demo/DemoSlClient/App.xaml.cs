@@ -35,7 +35,7 @@ namespace Demo
 				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/rest/categoryservice/")
 				//@"http://202.119.11.100:62152/StudentService/"
 				);
-			MessageBox.Show(RestClientDefault.BaseUri.ToString());
+			//MessageBox.Show(RestClientDefault.BaseUri.ToString());
 #else
 			RestClientDefault.BaseUri = new Uri("http://localhost:39012/Demo/Service/");
 #endif

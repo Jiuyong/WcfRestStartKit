@@ -8,6 +8,7 @@ namespace Demo
 	public static class Commands
 	{
 		public const string Category = "category";
+		public const string SendFilePartial = "SendFilePartial";
 	}
 	
 	public class Root<T>

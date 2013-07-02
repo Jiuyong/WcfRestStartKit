@@ -39,12 +39,20 @@ namespace Jiuyong
 			Stream.Dispose();
 		}
 
-		internal void Read(long start)
+		/// <summary>
+		/// 从<paramref name="offset"/>开始读取最大缓冲长度的数据到缓冲之中。
+		/// </summary>
+		/// <param name="offset">数据的开始位置。</param>
+		internal void Read(long offset)
 		{
-			Stream.Position = start;
+			Stream.Position = offset;
 			_bufferCount = Stream.Read(_buffer,0,_buffer.Length);
 		}
 
+		/// <summary>
+		/// 从缓冲中剔除无效的数据段，只返回有效地数据。
+		/// </summary>
+		/// <returns>净有效数据。</returns>
 		internal byte[] GetBuffer()
 		{
 			var r = _buffer;
