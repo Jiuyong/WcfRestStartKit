@@ -78,54 +78,75 @@ namespace Jiuyong
 		internal void StartUploadFile(ProgressViewModel<System.IO.FileInfo> item,Action<long> uploadCompletedCallback)
 		{
 			var us = new UploadFile("",item.Body);
-			var sm = us.Stream;
-			var lt = us.File.Length;
+			//var sm = us.Stream;
+			var tl = us.File.Length;
+			//long datalength = 0;
+			var hs = new SHA256Managed().ComputeHash(us.Stream);
+			us.Stream.Position = 0;
+			//var ht = HashType.Sha256;
+			//var fn = us.File.Name;
 			//this.SendData(us.Stream,0,us.File.Length,r=>0,us.File.Length,
-			this.SendFilePartial<long>("",us.Stream,r=>
+
+			//UploadFilePartial(item, uploadCompletedCallback);
+
+			long offset = us.Stream.Position;
+			us.Read(0);
+			UploadFilePartial(item, uploadCompletedCallback, us, tl, hs,offset);
+
+		}
+
+		private void UploadFilePartial(ProgressViewModel<System.IO.FileInfo> item, Action<long> uploadCompletedCallback, UploadFile us, long tl, byte[] hs,long offset)
+		{
+
+			var ms = new MemoryStream(us.GetBuffer());
+			//var offset = us.Stream.Position;
+			BeginButton.SendFilePartial<long>(Commands.TestSendFilePartial, ms, r =>
 			{
-			    if(r.HasResult)
-			    {
+				if (r.HasResult)
+				{
 					item.CurrentValue = r.Result;
-			        if (r.Result < item.Body.Length)//不能使用 us.Stream.Length;因为当读取时有可能会返回异常。
-			        {//传输中。
-			            us.Read(r.Result);
-			            if (us.Cancelled || item.Cancelled)
-			            {//被用户取消。
-			                us.Close();
-			            }
-			            else
-			            {
+					if (r.Result < tl)//不能使用 us.Stream.Length;因为当读取时有可能会返回异常。
+					{//传输中。
+						us.Read(r.Result);
+						offset = r.Result;
+						if (us.Cancelled || item.Cancelled)
+						{//被用户取消。
+							us.Close();
+						}
+						else
+						{
 							//继续传输。
 							//svr.UploadAsync(us.Storage,e.Result,us.GetBuffer());//使用流拷贝后不再使用。
-			            }
-			        }
+							UploadFilePartial(item, uploadCompletedCallback, us, tl, hs, offset);
+						}
+					}
 
-			        if (r.Result == item.Body.Length)
-			        {//传输完毕。
-			            us.Close();
-			            uploadCompletedCallback(r.Result);
-			            item.Completed = true;
-			        }
+					if (r.Result == item.Body.Length)
+					{//传输完毕。
+						us.Close();
+						uploadCompletedCallback(r.Result);
+						item.Completed = true;
+					}
 
 					//Jiuyong:完成文件不对时的处理（比如，因意外而导致的不是上传到同一个文件上的）
-			    }
+				}
 				else
 				{
 					//失去响应。
 					us.Close();
 					item.Cancelled = true;
 				}
-			},
-			totalLength:us.File.Length,
-			fileName:item.Body.Name,
-			hash:new SHA1Managed().ComputeHash(us.Stream),
-			hashType:HashType.Sha1);
 
-			//svr.CreateFileCompleted += (s,e) =>
-			//{
-			//    svr.UploadFileAsync(e.Result,0,us.GetBuffer(),false,false);
-			//};
-			//svr.CreateFileAsync(us.File.Length);
+			}
+			,
+			offset: offset
+				//, 
+				//length: data.Length
+			,
+			totalLength: tl
+			,
+			hash: hs
+			);
 		}
 
 		private void SelectFilesButton_Click(object sender,RoutedEventArgs e)
