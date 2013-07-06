@@ -88,6 +88,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\JiuyongServerCore.csproj">
+      <Project>{1E64D910-3AE1-4B18-B7FE-74BD4D9D7FC2}</Project>
+      <Name>JiuyongServerCore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DemoService\DemoService.csproj">
       <Project>{E5EBA73A-BD6A-473E-9804-30543F46C6CE}</Project>
       <Name>DemoService</Name>

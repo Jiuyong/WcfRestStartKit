@@ -30,7 +30,8 @@ namespace Demo
 			//RestClientDefault.ClientToken = null;
 #if DEBUG
 			RestClientDefault.BaseUri = new Uri(
-				App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/Service/")
+				App.Current.Host.Source.AbsoluteUri.Replace("/client.xap", "/")
+				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/Service/")
 				//@"http://202.119.11.100:8080/BookRestService/rest/categoryservice/"
 				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/rest/categoryservice/")
 				//@"http://202.119.11.100:62152/StudentService/"

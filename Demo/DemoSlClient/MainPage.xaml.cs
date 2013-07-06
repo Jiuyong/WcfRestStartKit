@@ -19,13 +19,24 @@ namespace Demo
 		public MainPage()
 		{
 			InitializeComponent();
-			//Loaded += Page_Loaded;
+			Loaded += Page_Loaded;
 		}
 
-		//void Page_Loaded(object sender, RoutedEventArgs e)
-		//{
+		void Page_Loaded(object sender, RoutedEventArgs e)
+		{
+			var d = new Models.Post
+			{
+				BlogId = Core.GetNextSerialInt32(),
+				Content = "一大段文本内容。",
+				CreateTime = DateTime.Now,
+				Title = "WPF 评论"
+			};
 
-		//}
+			this.SendCommand<int?>(Jiuyong.Commands.TestDataBase, null, r =>
+			{
+				MessageBox.Show(r.Result.ToString());
+			});
+		}
 
 
 		private void ButtonCancel_Click(object sender, RoutedEventArgs e)

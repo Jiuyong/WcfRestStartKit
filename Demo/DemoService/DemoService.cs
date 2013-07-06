@@ -78,17 +78,25 @@ namespace Demo
 
 		#endregion
 
-		[WebInvoke(UriTemplate = Jiuyong.Commands.TestDataBase,Method=HttpMethod.Put)]
-		public int PostTest(Models.Post post)
+		[WebGet(UriTemplate = Jiuyong.Commands.TestDataBase)]
+		public int TestDatabase()//Models.Post post
 		{
 			var db = new Entity.DatabaseContext();
+			//var p = new Entity.Post
+			//{
+			//    BlogId=post.BlogId
+			//    ,
+			//    Content=post.Content
+			//    ,
+			//    Title=post.Title
+			//};
 			var p = new Entity.Post
 			{
-				BlogId=post.BlogId
+				BlogId=1
 				,
-				Content=post.Content
+				Content = "内容"
 				,
-				Title=post.Title
+				Title = "标题"
 			};
 			db.Posts.Add(p);
 			db.SaveChanges();
