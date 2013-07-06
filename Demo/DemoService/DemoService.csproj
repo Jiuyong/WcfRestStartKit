@@ -65,16 +65,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\JiuyongCore.csproj">
-      <Project>{27E992BD-89F5-47D3-9A34-8D6B8EDA7334}</Project>
-      <Name>JiuyongCore</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\JiuyongServerCore.csproj">
+      <Project>{1e64d910-3ae1-4b18-b7fe-74bd4d9d7fc2}</Project>
+      <Name>JiuyongServerCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

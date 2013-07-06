@@ -78,7 +78,7 @@ namespace Demo
 
 		#endregion
 
-		[WebInvoke(UriTemplate = Jiuyong.Commands.Test,Method=HttpMethod.Put)]
+		[WebInvoke(UriTemplate = Jiuyong.Commands.TestDataBase,Method=HttpMethod.Put)]
 		public int PostTest(Models.Post post)
 		{
 			var db = new Entity.DatabaseContext();
@@ -93,6 +93,12 @@ namespace Demo
 			db.Posts.Add(p);
 			db.SaveChanges();
 			return db.Posts.Count();
+		}
+
+		[WebGet(UriTemplate=Jiuyong.Commands.TestRoute)]
+		public DateTime GetTestRoute()
+		{
+			return DateTime.Now;
 		}
 
 		[OperationContract]

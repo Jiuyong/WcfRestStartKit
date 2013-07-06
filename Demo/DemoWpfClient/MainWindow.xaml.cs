@@ -24,18 +24,24 @@ namespace Demo
 		public MainWindow()
 		{
 			InitializeComponent();
-			//Loaded += Window_Loaded;
+			Loaded += Window_Loaded;
 		}
 
 		void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			//var d = new Models.Post
-			//{
-			//    BlogId = 1,
-			//    Content = "一大段文本内容。",
-			//    CreateTime = DateTime.Now,
-			//    Title = "WPF 评论"
-			//};
+			var d = new Models.Post
+			{
+				BlogId = 1,
+				Content = "一大段文本内容。",
+				CreateTime = DateTime.Now,
+				Title = "WPF 评论"
+			};
+
+			this.SendCommand<DateTime>(new Uri(new Uri("http://localhost:80/product/smartinfobase/"), Jiuyong.Commands.TestRoute, false), null, r =>
+			{
+				MessageBox.Show(r.Result.ToString());
+			}
+			);
 
 
 		}
