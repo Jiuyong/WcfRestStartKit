@@ -19,7 +19,7 @@ namespace Demo
 		public MainPage()
 		{
 			InitializeComponent();
-			Loaded += Page_Loaded;
+			//Loaded += Page_Loaded;
 		}
 
 		void Page_Loaded(object sender, RoutedEventArgs e)

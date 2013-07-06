@@ -48,6 +48,7 @@ namespace Demo
 			Register<RestPage>("Rest调用验证");
 			Register<Views.StudentsPage>("Rest获取数据");
 			Register<UploadWindow>("上传文件");
+			Register<Views.RestTestPage>("标准服务调用测试");
 			#endregion
 
 			this.RootVisual = new MainPage();

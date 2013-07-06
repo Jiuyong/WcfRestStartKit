@@ -4,5 +4,11 @@
              >
     <Application.Resources>
         
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="/sl;component/Themes/GlobalStyle.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    	</ResourceDictionary>
+        
     </Application.Resources>
 </Application>

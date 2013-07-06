@@ -19,6 +19,7 @@
 				<HyperlinkButton Content="Rest调用验证" Click="HyperlinkButton_Click"/>
 				<HyperlinkButton Content="Rest获取数据" Click="HyperlinkButton_Click"/>
 				<HyperlinkButton Content="上传文件" Click="HyperlinkButton_Click"/>
+				<HyperlinkButton Content="标准服务调用测试" Click="HyperlinkButton_Click"/>
 			</StackPanel>
 		</Grid>
 		<Grid Width="200" VerticalAlignment="Bottom" Margin="0,0,0,40">

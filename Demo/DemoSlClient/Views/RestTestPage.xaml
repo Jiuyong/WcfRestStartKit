@@ -1,0 +1,14 @@
+﻿<navigation:Page x:Class="Demo.Views.RestTestPage" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="RestTestPage Page">
+    <Grid x:Name="LayoutRoot" Background="#FFB37BC3">
+    	<Button x:Name="GetTestDatabaseButton" Content="GetTestDatabase" Margin="{StaticResource MarginThickness}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+    </Grid>
+</navigation:Page>
