@@ -48,5 +48,23 @@ namespace Demo
 				host.Abort();
 			}
 		}
+
+		private void Hyperlink_Click(object sender, RoutedEventArgs e)
+		{
+			if (sender is Hyperlink)
+			{
+				var sd = sender as Hyperlink;
+				var uri = sd.NavigateUri.ToString();
+				try
+				{
+					System.Diagnostics.Process.Start(uri);
+				}
+				catch (System.ComponentModel.Win32Exception we)//可能文件夹并不存在。
+				{
+					//vs.ShowError("打开地址“{1}”出现错误“{0}”。", we.Message, uri);
+					MessageBox.Show(String.Format("打开地址“{1}”出现错误“{0}”。", we.Message, uri));
+				}
+			}
+		}
 	}
 }

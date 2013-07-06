@@ -30,11 +30,11 @@ namespace Demo
 			//RestClientDefault.ClientToken = null;
 #if DEBUG
 			RestClientDefault.BaseUri = new Uri(
-				App.Current.Host.Source.AbsoluteUri.Replace("/client.xap", "/")
-				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/Service/")
-				//@"http://202.119.11.100:8080/BookRestService/rest/categoryservice/"
+				App.Current.Host.Source.AbsoluteUri.Replace("/client.xap", "/") //自承载服务。
+				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/Service/")//IIS(Ex)承载服务。
+				//@"http://202.119.11.100:8080/BookRestService/rest/categoryservice/" //第三方 Restfull 承载。
 				//App.Current.Host.Source.AbsoluteUri.Replace("/ClientBin/client.xap", "/rest/categoryservice/")
-				//@"http://202.119.11.100:62152/StudentService/"
+				//@"http://202.119.11.100:62152/StudentService/" //第三方 IIS(Ex) 承载。
 				);
 			//MessageBox.Show(RestClientDefault.BaseUri.ToString());
 #else

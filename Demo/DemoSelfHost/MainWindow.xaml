@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        					<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" VerticalAlignment="Top">
+						<TextBlock Text="安装地址：" Margin="{DynamicResource 左右旁白 4 Thickness}"/>
+						<TextBlock TextWrapping="Wrap" Margin="{DynamicResource 左右旁白 4 Thickness}" ><Hyperlink NavigateUri="http://localhost/product/smartinfobase/" TargetName="clientsetup" Click="Hyperlink_Click" IsEnabled="{Binding IsRunning}"><Run Text="http://localhost/product/smartinfobase/"/></Hyperlink></TextBlock>
+					</StackPanel>
     </Grid>
 </Window>

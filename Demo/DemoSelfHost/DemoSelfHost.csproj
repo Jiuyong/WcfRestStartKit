@@ -108,8 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\JiuyongServerCore.csproj">
-      <Project>{1e64d910-3ae1-4b18-b7fe-74bd4d9d7fc2}</Project>
+      <Project>{1E64D910-3AE1-4B18-B7FE-74BD4D9D7FC2}</Project>
       <Name>JiuyongServerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\JiuyongWpf.csproj">
+      <Project>{9F0A7307-CA10-4D2E-9338-9B72F880A1DC}</Project>
+      <Name>JiuyongWpf</Name>
     </ProjectReference>
     <ProjectReference Include="..\DemoService\DemoService.csproj">
       <Project>{e5eba73a-bd6a-473e-9804-30543f46c6ce}</Project>

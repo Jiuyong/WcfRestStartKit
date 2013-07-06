@@ -16,7 +16,7 @@ namespace Demo
 	[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
 	[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
 	[ServiceContract]
-	public class DemoService: IDebugService,ICoreService,IFileService,IClientAccessPolicy
+	public class DemoService: IDebugService,ICoreService,IFileService//,IClientAccessPolicy
 	{
 		[WebInvoke(UriTemplate=Commands.Category+@"/{id}",Method=HttpMethod.Get)]
 		public Root<Category> GetCategory(string id)
@@ -161,7 +161,7 @@ namespace Demo
 		[WebGet(UriTemplate = "/clientaccesspolicy.xml")]
 		public System.IO.Stream GetPolicy()
 		{
-			return ClientAccessPolicy.GetPolicy();
+			return WebHost.GetPolicy();
 		}
 
 		[WebGet(UriTemplate = "/")]
