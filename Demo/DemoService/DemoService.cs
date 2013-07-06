@@ -155,5 +155,17 @@ namespace Demo
 		{
 			return ClientAccessPolicy.GetPolicy();
 		}
+
+		[WebGet(UriTemplate = "/")]
+		public System.IO.Stream GetDefaultPage()
+		{
+			return WebHost.GetFile("Web/DemoSlClientTestPage.html");
+		}
+
+		[WebGet(UriTemplate = "/client.xap")]
+		public System.IO.Stream GetClientXap()
+		{
+			return WebHost.GetFile("Web/client.xap");
+		}
 	}
 }
