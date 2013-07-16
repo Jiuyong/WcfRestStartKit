@@ -16,8 +16,8 @@ namespace Demo
 		{
 			base.OnStartup(e);
 			RestClientDefault.BaseUri = new Uri(
-//@"http://localhost:39012/Demo/Service/"
-@"http://202.119.11.100:8080/BookRestService/rest/categoryservice/"
+@"http://localhost:39012/Demo/Service/"
+//@"http://202.119.11.100:8080/BookRestService/rest/categoryservice/"
 );
 		}
 	}

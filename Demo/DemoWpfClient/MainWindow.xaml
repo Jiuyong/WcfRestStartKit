@@ -6,13 +6,14 @@
 		mc:Ignorable="d" x:Class="Demo.MainWindow"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-    	<UniformGrid Rows="2" Columns="3" Width="400" Height="100" Margin="54.5,106" d:LayoutOverrides="VerticalAlignment">
+    	<UniformGrid Rows="3" Columns="3" Width="400" Height="150" d:LayoutOverrides="VerticalAlignment">
     		<Label Content="编号(_I)" HorizontalAlignment="Center" VerticalAlignment="Center" Target="{Binding ElementName=boxID}"/>
     		<TextBox x:Name="BoxID" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center"/>
     		<Button x:Name="ButtonGetData" Content="获取" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="25" Click="ButtonGetData_Click"/>
     		<Label Content="名称(_N)" HorizontalAlignment="Center" VerticalAlignment="Center" Target="{Binding ElementName=boxName}"/>
     		<TextBox x:Name="BoxName" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center"/>
     		<Button x:Name="ButtonPutData" Content="添加" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="25" Click="ButtonPutData_Click"/>
+    		<Button x:Name="UploadFileButton" Content="选择文件并上传..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
     	</UniformGrid>
     	<Grid Width="200" VerticalAlignment="Center" Margin="0,200,0,0">
     		<Grid.ColumnDefinitions>

@@ -13,6 +13,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Jiuyong;
 using Demo.Models;
+using Microsoft.Win32;
+using System.Security.Cryptography;
 
 namespace Demo
 {
@@ -25,6 +27,22 @@ namespace Demo
 		{
 			InitializeComponent();
 			//Loaded += Window_Loaded;
+			UploadFileButton.Click += new RoutedEventHandler(UploadFileButton_Click);
+		}
+
+		void UploadFileButton_Click(object sender,RoutedEventArgs e)
+		{
+			var dlg = new OpenFileDialog();
+			if (true == dlg.ShowDialog() && dlg.CheckFileExists)
+			{
+				var fs = dlg.OpenFile();
+				var hash = new SHA256Managed().ComputeHash(fs);
+				fs.Position = 0;
+				UploadFileButton.SendFilePartial<long>("tsfp",fs,r =>//tsfp —— 可以替换为实际请求的相对基址路径。
+				{
+					MessageBox.Show(String.Format("发送文件 {0} ，共 {1} 字节完成。",dlg.FileName,fs.Length));
+				},offset:0,length:fs.Length,totalLength:fs.Length,hash:hash,fileName:dlg.SafeFileName);
+			}
 		}
 
 		void Window_Loaded(object sender, RoutedEventArgs e)
